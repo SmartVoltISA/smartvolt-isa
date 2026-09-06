@@ -1,8 +1,9 @@
 # SMARTVOLTISA LICENSE AND PROVENANCE NOTICE
 
-**Version 1.0 — 2026**  
+**Version 1.1 — 2026**  
 **Originator:** Alexander / SmartVoltISA  
-**AI collaborator:** OpenAI / ChatGPT
+**Primary AI collaborator:** OpenAI / ChatGPT  
+**Additional AI participants:** Gemini, Grok, DeepSeek, Kimi, and other AI systems where evidenced by the surviving record
 
 ## 1. Purpose
 
@@ -20,13 +21,17 @@ The work includes, among other things, concepts, hypotheses, architectural princ
 
 **AI role:** analysis, formalization, hypothesis generation, implementation assistance, simulation and testing assistance, critique, alternative formulations, documentation, and other computational or intellectual assistance.
 
-The final architecture and methodology were not assumed to be known in advance by the AI system. They emerged through an iterative human-led process in which principles were explained, tested, corrected, formalized, connected, and recorded.
+The principal continuous AI collaboration was carried out with **ChatGPT / OpenAI**. Other AI systems, including **Gemini, Grok, DeepSeek, and Kimi**, also participated at different stages and may have contributed analysis, criticism, alternative hypotheses, formulations, checks, or other useful input.
+
+The existence of an AI contribution does not by itself establish authorship of a particular idea. Specific attribution should be based on surviving conversations, documents, commits, experiment records, or other evidence whenever such evidence exists.
+
+The final architecture and methodology were not assumed to be known in advance by the AI systems. They emerged through an iterative human-led process in which principles were explained, tested, corrected, formalized, connected, and recorded.
 
 ## 3. Provenance
 
 The history of the work is part of the work's provenance.
 
-Repository history, commits, releases, archived documents, research logs, experiment records, and linked repositories may provide evidence of the chronological development of the work.
+Repository history, commits, releases, archived documents, research logs, experiment records, conversations, and linked repositories may provide evidence of the chronological development of the work and the participation of different AI systems.
 
 Earlier hypotheses, versions, experiments, and decisions should not be represented as having existed in their later form when the historical record shows otherwise.
 
@@ -47,17 +52,19 @@ Users and downstream projects must not knowingly present the original SmartVoltI
 
 Modification, extension, translation, implementation, or independent reproduction does not by itself transfer authorship of the original material.
 
+AI systems that participated in development are recorded as participants in the development process. Their participation should not be interpreted as a claim that they independently originated the project's goals, final architecture, or overall direction.
+
 ## 5. No claim about historical significance
 
 This document does not claim that the work is historically significant, novel in every respect, or destined to influence future developments.
 
-Its purpose is narrower and more durable: **to preserve a verifiable record of where this particular body of work came from, who directed its development, how AI participated, and what evidence remains available for independent examination.**
+Its purpose is narrower and more durable: **to preserve a verifiable record of where this particular body of work came from, who directed its development, how multiple AI systems participated, and what evidence remains available for independent examination.**
 
 The eventual significance of the work is left to independent evaluation and history.
 
 ## 6. Independent verification
 
-Readers are encouraged to examine the repository history, commits, documents, experiments, code, and other available primary records rather than relying solely on claims made in this notice.
+Readers are encouraged to examine the repository history, commits, documents, experiments, code, conversations where preserved, and other available primary records rather than relying solely on claims made in this notice.
 
 The strongest evidence of provenance is the surviving, independently inspectable record.
 
@@ -82,4 +89,4 @@ The objective is simple:
 ---
 
 **SmartVoltISA — Origin / Provenance Record**  
-**Version 1.0 — 2026**
+**Version 1.1 — 2026**

@@ -1,0 +1,55 @@
+name: SmartVolt Protection Audit
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  protection-audit:
+    name: Protection audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout without rewriting history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify protection files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(LICENSE SECURITY.md NOTICE COPYRIGHT.md SMARTVOLT-PROTECTION-STANDARD.md)
+          for f in "${required[@]}"; do
+            test -f "$f" || { echo "MISSING: $f"; exit 1; }
+            test -s "$f" || { echo "EMPTY: $f"; exit 1; }
+            echo "OK: $f"
+          done
+
+      - name: Scan tracked text for obvious secret patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=$(git ls-files -z)
+          if printf '%s' "$files" | xargs -0 grep -IEn --exclude='*.lock' \
+            -e 'BEGIN (RSA|OPENSSH|EC|DSA) PRIVATE KEY' \
+            -e 'ghp_[A-Za-z0-9]{30,}' \
+            -e 'github_pat_[A-Za-z0-9_]{50,}' \
+            -e 'AKIA[0-9A-Z]{16}' \
+            -e 'AIza[0-9A-Za-z_-]{30,}' \
+            -e 'sk-[A-Za-z0-9_-]{20,}' \
+            -e '-----BEGIN PRIVATE KEY-----'; then
+            echo 'Potential secret pattern detected. Review before merging.'
+            exit 1
+          fi
+          echo 'No obvious tracked secret patterns detected.'
+
+      - name: Verify history is available
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-list --count HEAD)" -ge 1
+          echo "History present: $(git rev-list --count HEAD) commits"

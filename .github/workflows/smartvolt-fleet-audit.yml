@@ -1,0 +1,23 @@
+name: SmartVolt Fleet Audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  fleet-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout audit tools
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run read-only fleet audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/smartvolt_fleet_audit.py
